@@ -5,10 +5,20 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms';
+import { LoginNavTitleComponent } from './login/login-nav-title/login-nav-title.component';
+import { LoginSigninComponentComponent } from './login/login-signin-component/login-signin-component.component';
+import { BlocksNavComponent } from './login/blocks-nav/blocks-nav.component';
+import { FindMoreInfomationComponent } from './login/find-more-infomation/find-more-infomation.component';
+import { BottomNavComponent } from './login/bottom-nav/bottom-nav.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    LoginNavTitleComponent,
+    LoginSigninComponentComponent,
+    BlocksNavComponent,
+    FindMoreInfomationComponent,
+    BottomNavComponent
   ],
   imports: [
     BrowserModule,
