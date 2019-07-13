@@ -10,6 +10,7 @@ import { LoginSigninComponentComponent } from './login/login-signin-component/lo
 import { BlocksNavComponent } from './login/blocks-nav/blocks-nav.component';
 import { FindMoreInfomationComponent } from './login/find-more-infomation/find-more-infomation.component';
 import { BottomNavComponent } from './login/bottom-nav/bottom-nav.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { BottomNavComponent } from './login/bottom-nav/bottom-nav.component';
     LoginSigninComponentComponent,
     BlocksNavComponent,
     FindMoreInfomationComponent,
-    BottomNavComponent
+    BottomNavComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
