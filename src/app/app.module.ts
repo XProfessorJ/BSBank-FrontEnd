@@ -11,6 +11,7 @@ import { BlocksNavComponent } from './login/blocks-nav/blocks-nav.component';
 import { FindMoreInfomationComponent } from './login/find-more-infomation/find-more-infomation.component';
 import { BottomNavComponent } from './login/bottom-nav/bottom-nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CardTableComponent } from './dashboard/card-table/card-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FindMoreInfomationComponent,
     BottomNavComponent,
     DashboardComponent,
+    CardTableComponent,
   ],
   imports: [
     BrowserModule,
