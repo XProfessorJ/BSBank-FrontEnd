@@ -1,0 +1,45 @@
+.container{
+    font:"TondoLt";
+    color:#666666;
+    position:relative;
+    top:30px;
+    font-size:12px;
+}
+.bgPhoto{
+    width:100%;
+    display: block;
+}
+img{
+    vertical-align:middle;
+    border-style:none;
+}
+.textPart{
+    position: absolute;
+    top:20%;
+    left:5%;
+    width:40%;
+}
+.textPart>h1{
+    font-size:3em;;
+}
+.toRed{
+    color:#e10a0a!important;
+}
+.textPart>p{
+    font-size:1.5em;
+}
+.button{
+    text-decoration: none;
+    display: table-cell;
+    width:8.5em;
+    height:3.6em;
+    background-color: #e10a0a;
+    font-size: 1.5em;
+    color:#fff;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 1.4em;
+}
+.textPart>a:hover{
+    background-color:#8c2424;
+}
