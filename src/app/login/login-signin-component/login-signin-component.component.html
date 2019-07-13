@@ -9,8 +9,8 @@
     </div>
     <div class="signon_form">
         <a class="signon_logo">Sign On</a>
-        <input placeholder="User ID">
-        <input placeholder="Password">
-        <button class="red_button sign_on_button">Sign On</button>
+        <input [(ngModel)]="userId" placeholder="User ID">
+        <input [(ngModel)]="password" type="password" placeholder="Password">
+        <button class="red_button sign_on_button" (click)="login()">Sign On</button>
     </div>
 </div>

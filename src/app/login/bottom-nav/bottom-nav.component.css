@@ -1,0 +1,26 @@
+.FootList{
+    float: left;
+    padding-right: 70px;
+    font-size:15px;
+    line-height:30px;
+    color:white;
+}
+.FootList p{
+    font-size:20px;
+    font-weight: bold;
+}
+div.FootList ul li a{
+    color: #FFF;
+}
+#footline{
+    left:50%;
+    clear:both;
+    font-size: 13px;
+    padding: 0px 0px 20px 0px;
+    color:white;
+    border-top: 1px solid hsla!important;
+    border-bottom: 1px solid hsla!important;
+}
+#footline a{
+    color: #fff;
+}
