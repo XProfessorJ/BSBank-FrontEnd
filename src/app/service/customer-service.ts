@@ -13,10 +13,12 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class BankService {
+export class CustomerService {
     private customerUrl = 'http://127.0.0.1:8769';
     constructor(private httpClient: HttpClient) {}
     userLogin(userId:string,password:string): Observable<UserLogin> {
-        return this.httpClient.post<UserLogin>(this.customerUrl + '/authrization',{userId,password}as UserLogin ,httpOptions);
+        alert("this is CustomerService:userLogin"+userId+" "+password);
+        return null;
+        // return this.httpClient.post<UserLogin>(this.customerUrl + '/authrization',{userId,password}as UserLogin ,httpOptions);
     }
 }

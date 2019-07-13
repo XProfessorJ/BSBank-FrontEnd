@@ -20,7 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BlocksNavComponent,
     FindMoreInfomationComponent,
     BottomNavComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
