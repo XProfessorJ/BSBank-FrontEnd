@@ -1,3 +1,16 @@
-<p>
-  login-signin-component works!
-</p>
+<div class="signin_block" style="background-image: url(assets/images/ps_edit-53-1600x2240.jpg);">
+    <div class="tips_part">
+        <a class="a4logo big_title">Welcome to BS Money</a>
+        <a class="a4logo signal">Choose BS Bank is a wise choice you have ever made</a>
+        <a class="a4logo">Better Service Better Experience</a>
+        <button class="red_button">Learn more
+            <img id="down_arrow" class="down_arrow" src="assets/images/right-arrow.png">
+        </button>
+    </div>
+    <div class="signon_form">
+        <a class="signon_logo">Sign On</a>
+        <input [(ngModel)]="userId" placeholder="User ID">
+        <input [(ngModel)]="password" type="password" placeholder="Password">
+        <button class="red_button sign_on_button" (click)="login()">Sign On</button>
+    </div>
+</div>

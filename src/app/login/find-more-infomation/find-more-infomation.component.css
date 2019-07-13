@@ -2,8 +2,10 @@
     font:"TondoLt";
     color:#666666;
     position:relative;
-    top:30px;
+    /* top:30px;
+    bottom:30px; */
     font-size:12px;
+    
 }
 .bgPhoto{
     width:100%;
@@ -17,7 +19,7 @@ img{
     position: absolute;
     top:20%;
     left:5%;
-    width:40%;
+    width:50%;
 }
 .textPart>h1{
     font-size:3em;;

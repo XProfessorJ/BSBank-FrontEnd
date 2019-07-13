@@ -1,102 +1,4 @@
-/*.textDetail{
-    margin:0 auto;
-    font-family: "FocoLt";
-    color:#666;
-    text-decoration: none;
-}
-.container{
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width:100%;
-   
-}
-.greyBg{
-    background:#f7f5f6;
-}
-.text-left{
-    text-align:left!important;
-}
-div{
-    display: block;
-}
-.upTo{
-    padding-top:3rem!important;
-    padding-bottom:3rem!important;
-}
-.toCenter{
-    justify-content:center!important;
-}
-.flexStyle{
-    display: flex;
-    flex-wrap:wrap;
-    margin-right:-15px;
-    margin-left:-15px;
 
-}
-.d-flex{
-    display: flex!important;
-}
-.w-100{
-    width:100%;
-}
-.mb-3{
-    margin-bottom: 1rem!important;
-}
-.col-lg-4{
-    flex:0 0 31%;
-    max-width:31%;
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.minBlock{
-    display: flex;
-    position:relative;
-    flex-direction: column;
-    width:100%;
-    background: #fff;
-}
-a{
-    cursor:pointer;
-    
-
-}
-a:hover,a:active{
-    color:#e10a0a;
-    transition: 0.3s ease-in-out;
-}
-.productSum{
-    display:inline-block;
-    position: absolute;
-    width:70%;
-    padding:1em 0 1em 1em;
-}
-.productSum strong{
-    color:#e10a0a;
-}
-p{
-    color:#66666b;
-}
-.productIcon{
-    display: inline-block;
-    position: absolute;
-    width:30%;
-    margin:0 .5em;
-    
-}
-.productIcon>img{
-    width:90px;
-    height:90px;
-    transition:0.3s ease-in-out;
-    margin-left:5px;
-    display: table-cell;
-    vertical-align: middle;
-}
-*/
 .blockContainer{
     margin-right: auto;
     margin-left: auto;
@@ -106,7 +8,7 @@ p{
     padding-bottom:3rem!important;
     width:100%;
     background-color: #f7f5f6;
-    
+    width:inherit;
 }
 .innerContainer{
     margin-left:.5rem;
@@ -139,7 +41,7 @@ a{
     text-decoration: none;
 }
 .productSum{
-    width:70%;
+    width:65%;
     display: inline-block;
     padding-top:5px;
     padding-left:10px;
@@ -151,7 +53,7 @@ a{
     font-size:20px;
 }
 .productIcon{
-    width:30%;
+    width:35%;
     display: inline;
     vertical-align: middle;
 }

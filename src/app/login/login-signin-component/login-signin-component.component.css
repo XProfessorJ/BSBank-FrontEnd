@@ -1,0 +1,82 @@
+.signin_block{
+    position: relative;
+    height:80vh;
+    background-size: cover;
+    display: inline-block;
+    width:100%;
+    opacity: 0.9;
+}
+.signon_form{
+    padding: 3vh;
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    height: 45vh;
+    width: 40vh;
+    opacity: 0.75;
+    background: whitesmoke;
+    margin-right: 5vh;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.signon_logo{
+    display: block;
+    margin: 0 0 4vh 0;
+    font-size: 3.5vh;
+}
+input{
+    outline-style: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 14px 14px;
+    width: 90%;
+    font-size: 2vh;
+    margin-bottom: 3vh;
+}
+.a4logo{
+    display: block;
+    padding: 1vh;
+    color: white;
+}
+.big_title{
+    font-size: 6vh;
+}
+.signal{
+    font-size: 3vh;
+}
+.tips_part{
+    margin-left: 10vh;
+    height: 50vh;
+    width: 60vh;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.red_button{
+    padding: 1vh;
+    margin: 1vh;
+    color: #fff;
+    background-color: #e10a0a;
+    border: 2px solid #e10a0a;
+    line-height: 2.8vh;
+    font-size: 2vh;
+    border-radius: 1vh;
+}
+.button_logo{
+    display: inline-block;
+    height: 1vh;
+    width: 1vh;
+}
+.down_arrow{
+    height: 2vh;
+    vertical-align: middle;
+}
+.sign_on_button{
+    font-size: 2.2vh;
+    margin: 0;
+    padding: 1.2vh;
+    width: 100%;
+}
+.sign_on_button:hover{
+    background-color: red;
+}

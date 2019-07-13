@@ -1,3 +1,57 @@
-.virgin-logo{
+.parent{
+    width: 100%;
+    height: 100%;
+    margin: 0; 
+    padding: 0;
+    position: relative;
+}
+.virgin_logo_div{
+    display: inline-block
+}
+.virgin_logo{
  height: 6vh;
+}
+
+.nav_lable{
+    display: inline-block;
+    color: #333333;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
+}
+.down_arrow{
+    height: 2vh;
+    vertical-align: middle;
+}
+ul{
+    margin: 0 0 0 3vh;
+    padding: 0;
+    display:flex;
+    list-style: none;
+}
+.big_li{
+    padding: 1.6vh;
+}
+li:hover{
+    color: #bd1d65;
+    text-decoration: underline  #bd1d65;
+}
+.help_div{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+}
+.help_a{
+    font-size: 1.8vh;
+    height: 100%;
+    overflow: hidden;
+    display: inline-block;
+}
+.help_a:hover{
+    color: #bd1d65;
+    text-decoration: underline  #bd1d65;
+    cursor: pointer;
+}
+a{
+    font-size: 2vh;
 }
