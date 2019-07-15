@@ -77,6 +77,6 @@ input{
     padding: 1.2vh;
     width: 100%;
 }
-.sign_on_button:hover{
+.red_button:hover{
     background-color: red;
 }
