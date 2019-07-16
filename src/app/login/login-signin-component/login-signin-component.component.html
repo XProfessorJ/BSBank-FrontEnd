@@ -7,9 +7,10 @@
             <img id="down_arrow" class="down_arrow" src="assets/images/right-arrow.png">
         </button>
     </div>
-    <div class="signon_form">
+    <div class="signon_form" >
         <a class="signon_logo">Sign On</a>
-        <input [(ngModel)]="userId" placeholder="User ID">
+        <input [(ngModel)]="userId" placeholder="User ID" (blur)="upperCase()" class="myUserId"> 
+        <img src="assets/images/close-circle.svg" alt="closecircle" id="closeCircle" />
         <input [(ngModel)]="password" type="password" placeholder="Password">
         <button class="red_button sign_on_button" (click)="login()">Sign On</button>
     </div>
