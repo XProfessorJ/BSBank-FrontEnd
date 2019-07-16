@@ -12,6 +12,7 @@ import { FindMoreInfomationComponent } from './login/find-more-infomation/find-m
 import { BottomNavComponent } from './login/bottom-nav/bottom-nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardTableComponent } from './dashboard/card-table/card-table.component';
+import { CardDisplayNumberFormat } from './component/cardDisplayNumber';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { CardTableComponent } from './dashboard/card-table/card-table.component'
     BottomNavComponent,
     DashboardComponent,
     CardTableComponent,
+    CardDisplayNumberFormat
   ],
   imports: [
     BrowserModule,

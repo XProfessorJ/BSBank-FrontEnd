@@ -35,7 +35,6 @@ export class LoginSigninComponentComponent implements OnInit {
   upperCase(){
     if(!(/^1[34578]\d{9}$/.test(this.userId))){
       document.getElementById("closeCircle").style.display="inline-block";
-     
     }else{
       document.getElementById("closeCircle").style.display="none";
     }

@@ -15,6 +15,7 @@ export class CardTableComponent implements OnInit {
   private customer:CustomerEntity;
   private creditCards:CreditCard[];
   private savingCards:SavingCard[];
+  private investmentCards;
   constructor(
     private customerService:CustomerService,
     private router: Router,
@@ -24,7 +25,7 @@ export class CardTableComponent implements OnInit {
       this.accounts=data['accounts'];
       this.customer=data['customer'];
     });
-    
+    this.getCreditCards();
   }
   test(){
     alert("this.customer.customerId");

@@ -7,27 +7,29 @@
             <div class="panel-heading">
                <a class="panel-title collapsed" data-toggle="collapse"  href="#panel-element-investment">
                   <button class="btn btn-danger" type="button">
-                      Investment Account<span class="badge">4</span>
+                      Investment Account<span class="badge" *ngIf="investmentCards">{{investmentCards.length}}</span>
                     </button></a>
             </div>
-            <div id="panel-element-investment" class="panel-collapse collapse">
+            <div id="panel-element-investment" class="panel-collapse">
               <div class="panel-body">
                   <table class="table table-striped">
-                      <!-- <caption>条纹表格布局</caption> -->
-                      <thead>
+                      <caption *ngIf="!investmentCards">该账户下无卡</caption>
+                      <thead *ngIf="investmentCards">
                         <tr>
                           <th>CardNo</th>
                           <th>Currency</th>
                           <th>CurrentBalance</th>
                           <th>AvailableBalance</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let card of savingCards">
+                        <tr *ngFor="let card of investmentCards">
                           <td>{{card.displayAccountNumber}}</td>
                           <td>{{card.currencyCode}}</td>
                           <td>{{card.currentBalance}}</td>
                           <td>{{card.availableBalance}}</td>
+                          <td>{{card.accountStatus}}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -36,29 +38,32 @@
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
-               <a class="panel-title collapsed" data-toggle="collapse"  href="#panel-element-saving" (click)="getCreditCards()">
+               <a class="panel-title collapsed" data-toggle="collapse"  href="#panel-element-saving">
                   <button class="btn btn-danger" type="button">
-                      Saving Account<span class="badge">4</span>
+                      Saving Account<span class="badge">{{savingCards.length}}</span>
                     </button></a>
             </div>
-            <div id="panel-element-saving" class="panel-collapse collapse">
+            <div id="panel-element-saving" class="panel-collapse">
               <div class="panel-body">
                   <table class="table table-striped">
                       <!-- <caption>条纹表格布局</caption> -->
-                      <thead>
+                      <caption *ngIf="!savingCards">该账户下无卡</caption>
+                      <thead *ngIf="savingCards">
                         <tr>
                           <th>CardNo</th>
                           <th>Currency</th>
                           <th>CurrentBalance</th>
                           <th>AvailableBalance</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let card of savingCards">
-                          <td>{{card.displayAccountNumber}}</td>
+                          <td>{{card.displayAccountNumber | cardDisplayNumberFormat}}</td>
                           <td>{{card.currencyCode}}</td>
-                          <td>{{card.currentBalance}}</td>
-                          <td>{{card.availableBalance}}</td>
+                          <td>{{card.currentBalance | number: '1.2-4'}}</td>
+                          <td>{{card.availableBalance | number: '1.2-4'}}</td>
+                          <td>{{card.accountStatus}}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -69,27 +74,30 @@
               <div class="panel-heading">
                  <a class="panel-title collapsed" data-toggle="collapse" href="#panel-element-credit">
                     <button class="btn btn-danger" type="button">
-                        Credit Account<span class="badge">4</span>
+                        Credit Account<span class="badge">{{creditCards.length}}</span>
                       </button></a>
               </div>
-              <div id="panel-element-credit" class="panel-collapse collapse">
+              <div id="panel-element-credit" class="panel-collapse">
                 <div class="panel-body">
                     <table class="table table-striped">
                         <!-- <caption>条纹表格布局</caption> -->
-                        <thead>
+                        <caption *ngIf="!creditCards">该账户下无卡</caption>
+                        <thead *ngIf="creditCards">
                           <tr>
                             <th>CardNo</th>
                             <th>Currency</th>
                             <th>CurrentBalance</th>
                             <th>AvailableBalance</th>
+                            <th>Status</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let credit of creditCards">
-                              <td>{{credit.displayAccountNumber}}</td>
-                              <td>{{credit.currencyCode}}</td>
-                              <td>{{credit.currentBalance}}</td>
-                              <td>{{credit.availableBalance}}</td>
+                          <tr *ngFor="let card of creditCards">
+                              <td>{{card.displayAccountNumber | cardDisplayNumberFormat}}</td>
+                              <td>{{card.currencyCode}}</td>
+                              <td>{{card.currentBalance | number: '1.2-4'}}</td>
+                              <td>{{card.availableBalance | number: '1.2-4'}}</td>
+                              <td>{{card.accountStatus}}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -99,32 +107,6 @@
         </div>
       </div>
       <div class="col-md-4 column">
-        <!-- <ol>
-          <li>
-            Lorem ipsum dolor sit amet
-          </li>
-          <li>
-            Consectetur adipiscing elit
-          </li>
-          <li>
-            Integer molestie lorem at massa
-          </li>
-          <li>
-            Facilisis in pretium nisl aliquet
-          </li>
-          <li>
-            Nulla volutpat aliquam velit
-          </li>
-          <li>
-            Faucibus porta lacus fringilla vel
-          </li>
-          <li>
-            Aenean sit amet erat nunc
-          </li>
-          <li>
-            Eget porttitor lorem
-          </li>
-        </ol> -->
       </div>
     </div>
   </div>

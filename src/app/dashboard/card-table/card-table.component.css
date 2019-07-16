@@ -12,3 +12,7 @@
 p{
     font-size: 5vh;
 }
+.accountStatusflag{
+    opacity: 0.5;
+    pointer-events: none;
+  }
