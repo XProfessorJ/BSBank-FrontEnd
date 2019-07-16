@@ -3,14 +3,32 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { UserLogin } from '../model/UserLogin';
 import { TokenEntity } from '../model/TokenEntity';
+import { AccountWithTokenEntity } from '../model/AccountWithTokenEntity';
 
 const httpOptions = {
-  headers: new HttpHeaders({'content-Type': 'application/json','async':'false'})
+  headers: new HttpHeaders({'content-Type': 'application/json','async':'false','Access-Control-Allow-Origin':'*'})
 };
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
+  private cards:{
+    "cards": {
+      "savingcards": [],
+      "creditcards": [
+        {
+          "displayAccountNumber":"59195498465",
+          "currencyCode":"USD",
+          "currentBalance":123,
+          "availableBalance":123
+        }
+      ]
+    },
+    "account": {
+      "accountId": "123",
+      "accountType": "CreditCard"
+    }
+  };
     private customerUrl = 'http://127.0.0.1:8769';
     constructor(private httpClient: HttpClient) {}
     userLogin(phone:string,password:string): Observable<any> {
@@ -20,12 +38,12 @@ export class CustomerService {
     allCustomerAccounts():Observable<any>{//拿用户所有的Account
       var token=localStorage.getItem('token');
       return this.httpClient.post<any>(this.customerUrl + '/customer/customerDashboard',
-      {token} as TokenEntity ,httpOptions)
+      {token} ,httpOptions)
       // return this.httpClient.get(this.customerUrl+'/customer/customerDashboard');
     }
-    queryCustomerAccount(): Observable<any>{//查询单个账户下的所有卡
-      alert(localStorage.getItem('token'));
+    queryCustomerCards(accountId:string):Observable<any>{//查询单个账户下的所有卡
+      var token=localStorage.getItem('token');
       return this.httpClient.post<any>(this.customerUrl + '/account/queryCards',
-      localStorage.getItem('token'),httpOptions)
+      {accountId,token} as AccountWithTokenEntity,httpOptions)
     }
 }

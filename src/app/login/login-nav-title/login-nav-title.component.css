@@ -4,9 +4,10 @@
     margin: 0; 
     padding: 0;
     position: relative;
+    margin-top: 1vh;
 }
 .virgin_logo_div{
-    display: inline-block
+     display: inline-flex;
 }
 .virgin_logo{
  height: 6vh;

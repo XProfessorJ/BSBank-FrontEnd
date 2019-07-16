@@ -1,0 +1,14 @@
+.column{
+    padding: 0;
+}
+.margintop4container{
+    margin-top: 1vh
+}
+.badge{
+    margin-left: 1vh;
+    color: white!important;
+    background-color: #d9534f!important;
+}
+p{
+    font-size: 5vh;
+}
