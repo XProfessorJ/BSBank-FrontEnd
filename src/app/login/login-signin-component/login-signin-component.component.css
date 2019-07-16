@@ -29,7 +29,7 @@ input{
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 14px 14px;
-    width: 90%;
+    width: 100%;
     font-size: 2vh;
     margin-bottom: 3vh;
 }
@@ -79,4 +79,7 @@ input{
 }
 .red_button:hover{
     background-color: red;
+}
+a{
+    text-decoration: none;
 }

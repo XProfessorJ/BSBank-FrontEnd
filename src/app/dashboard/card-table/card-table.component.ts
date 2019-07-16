@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerEntity } from 'src/app/model/Customer';
 import { CustomerService } from 'src/app/service/customer-service';
 import { Router } from '@angular/router';
+import { CreditCard } from 'src/app/model/CreditcardEntity';
+import { SavingCard } from 'src/app/model/SavingAccount';
 
 @Component({
   selector: 'app-card-table',
@@ -11,6 +13,8 @@ import { Router } from '@angular/router';
 export class CardTableComponent implements OnInit {
   private accounts:Account[];
   private customer:CustomerEntity;
+  private creditCards:CreditCard[];
+  private savingCards:SavingCard[];
   constructor(
     private customerService:CustomerService,
     private router: Router,
@@ -23,7 +27,14 @@ export class CardTableComponent implements OnInit {
     
   }
   test(){
-    alert(this.customer.customerId);
+    alert("this.customer.customerId");
   }
-  
+  getCreditCards(){
+    console.log('getCreditCards');
+    this.customerService.queryCustomerCards('123').subscribe(data=>{
+        this.creditCards=data['cards']['creditcards'];
+        this.savingCards=data['cards']['savingcards'];
+    });
+    debugger
+}
 }

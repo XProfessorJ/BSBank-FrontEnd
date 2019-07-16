@@ -1,1 +1,130 @@
-
+<p>Hi, {{customer.names}}</p>
+<div class="container margintop4container">
+    <div class="row clearfix">
+      <div class="col-md-8 column">
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+               <a class="panel-title collapsed" data-toggle="collapse"  href="#panel-element-investment">
+                  <button class="btn btn-danger" type="button">
+                      Investment Account<span class="badge">4</span>
+                    </button></a>
+            </div>
+            <div id="panel-element-investment" class="panel-collapse collapse">
+              <div class="panel-body">
+                  <table class="table table-striped">
+                      <!-- <caption>条纹表格布局</caption> -->
+                      <thead>
+                        <tr>
+                          <th>CardNo</th>
+                          <th>Currency</th>
+                          <th>CurrentBalance</th>
+                          <th>AvailableBalance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let card of savingCards">
+                          <td>{{card.displayAccountNumber}}</td>
+                          <td>{{card.currencyCode}}</td>
+                          <td>{{card.currentBalance}}</td>
+                          <td>{{card.availableBalance}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+               <a class="panel-title collapsed" data-toggle="collapse"  href="#panel-element-saving" (click)="getCreditCards()">
+                  <button class="btn btn-danger" type="button">
+                      Saving Account<span class="badge">4</span>
+                    </button></a>
+            </div>
+            <div id="panel-element-saving" class="panel-collapse collapse">
+              <div class="panel-body">
+                  <table class="table table-striped">
+                      <!-- <caption>条纹表格布局</caption> -->
+                      <thead>
+                        <tr>
+                          <th>CardNo</th>
+                          <th>Currency</th>
+                          <th>CurrentBalance</th>
+                          <th>AvailableBalance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let card of savingCards">
+                          <td>{{card.displayAccountNumber}}</td>
+                          <td>{{card.currencyCode}}</td>
+                          <td>{{card.currentBalance}}</td>
+                          <td>{{card.availableBalance}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                 <a class="panel-title collapsed" data-toggle="collapse" href="#panel-element-credit">
+                    <button class="btn btn-danger" type="button">
+                        Credit Account<span class="badge">4</span>
+                      </button></a>
+              </div>
+              <div id="panel-element-credit" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <!-- <caption>条纹表格布局</caption> -->
+                        <thead>
+                          <tr>
+                            <th>CardNo</th>
+                            <th>Currency</th>
+                            <th>CurrentBalance</th>
+                            <th>AvailableBalance</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let credit of creditCards">
+                              <td>{{credit.displayAccountNumber}}</td>
+                              <td>{{credit.currencyCode}}</td>
+                              <td>{{credit.currentBalance}}</td>
+                              <td>{{credit.availableBalance}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4 column">
+        <!-- <ol>
+          <li>
+            Lorem ipsum dolor sit amet
+          </li>
+          <li>
+            Consectetur adipiscing elit
+          </li>
+          <li>
+            Integer molestie lorem at massa
+          </li>
+          <li>
+            Facilisis in pretium nisl aliquet
+          </li>
+          <li>
+            Nulla volutpat aliquam velit
+          </li>
+          <li>
+            Faucibus porta lacus fringilla vel
+          </li>
+          <li>
+            Aenean sit amet erat nunc
+          </li>
+          <li>
+            Eget porttitor lorem
+          </li>
+        </ol> -->
+      </div>
+    </div>
+  </div>
