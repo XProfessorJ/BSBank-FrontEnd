@@ -12,23 +12,6 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CustomerService {
-  private cards:{
-    "cards": {
-      "savingcards": [],
-      "creditcards": [
-        {
-          "displayAccountNumber":"59195498465",
-          "currencyCode":"USD",
-          "currentBalance":123,
-          "availableBalance":123
-        }
-      ]
-    },
-    "account": {
-      "accountId": "123",
-      "accountType": "CreditCard"
-    }
-  };
     private customerUrl = 'http://127.0.0.1:8769';
     constructor(private httpClient: HttpClient) {}
     userLogin(phone:string,password:string): Observable<any> {

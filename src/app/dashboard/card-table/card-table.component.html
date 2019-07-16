@@ -1,7 +1,7 @@
 <p>Hi, {{customer.names}}</p>
 <div class="container margintop4container">
     <div class="row clearfix">
-      <div class="col-md-8 column">
+      <div class="col-md-8 column padding4table">
         <div class="panel-group">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -10,9 +10,9 @@
                       Investment Account<span class="badge" *ngIf="investmentCards">{{investmentCards.length}}</span>
                     </button></a>
             </div>
-            <div id="panel-element-investment" class="panel-collapse">
+            <div id="panel-element-investment" class="panel-collapse in">
               <div class="panel-body">
-                  <table class="table table-striped">
+                  <table class="table table-striped table-hover">
                       <caption *ngIf="!investmentCards">该账户下无卡</caption>
                       <thead *ngIf="investmentCards">
                         <tr>
@@ -43,9 +43,9 @@
                       Saving Account<span class="badge">{{savingCards.length}}</span>
                     </button></a>
             </div>
-            <div id="panel-element-saving" class="panel-collapse">
+            <div id="panel-element-saving" class="panel-collapse in">
               <div class="panel-body">
-                  <table class="table table-striped">
+                  <table class="table table-striped table-hover">
                       <!-- <caption>条纹表格布局</caption> -->
                       <caption *ngIf="!savingCards">该账户下无卡</caption>
                       <thead *ngIf="savingCards">
@@ -77,9 +77,9 @@
                         Credit Account<span class="badge">{{creditCards.length}}</span>
                       </button></a>
               </div>
-              <div id="panel-element-credit" class="panel-collapse">
+              <div id="panel-element-credit" class="panel-collapse in">
                 <div class="panel-body">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover">
                         <!-- <caption>条纹表格布局</caption> -->
                         <caption *ngIf="!creditCards">该账户下无卡</caption>
                         <thead *ngIf="creditCards">
@@ -106,7 +106,55 @@
             </div>
         </div>
       </div>
-      <div class="col-md-4 column">
+          <div class="col-md-4 column">
+                  <h1>
+                    Welcome to BSBank <small>Better Service Better Experience</small>
+                  </h1>
+              <div class="carousel slide" id="carousel-345056">
+                <ol class="carousel-indicators">
+                  <li class="active" data-slide-to="0" data-target="#carousel-345056">
+                  </li>
+                  <li data-slide-to="1" data-target="#carousel-345056">
+                  </li>
+                  <li data-slide-to="2" data-target="#carousel-345056">
+                  </li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img alt="" src="assets/images/gratisography-436-thumbnail.jpg" />
+                    <div class="carousel-caption">
+                      <h4>
+                        First Thumbnail label
+                      </h4>
+                      <p>
+                        Cras justo odio.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img alt="" src="assets/images/gratisography-bear.jpg" />
+                    <div class="carousel-caption">
+                      <h4>
+                        Second Thumbnail label
+                      </h4>
+                      <p>
+                        Cras justo odio dolo.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img alt="" src="assets/images/skateboard.jpg" />
+                    <div class="carousel-caption">
+                      <h4>
+                        Third Thumbnail label
+                      </h4>
+                      <p>
+                        Cras justobh ultricies.
+                      </p>
+                    </div>
+                  </div>
+                </div> <a class="left carousel-control" href="#carousel-345056" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-345056" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+              </div>
       </div>
     </div>
   </div>

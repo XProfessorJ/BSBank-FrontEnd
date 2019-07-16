@@ -36,6 +36,5 @@ export class CardTableComponent implements OnInit {
         this.creditCards=data['cards']['creditcards'];
         this.savingCards=data['cards']['savingcards'];
     });
-    debugger
-}
+}   
 }

@@ -1,8 +1,5 @@
-.column{
-    padding: 0;
-}
 .margintop4container{
-    margin-top: 1vh
+    margin-top: 1vh;
 }
 .badge{
     margin-left: 1vh;
@@ -15,4 +12,13 @@ p{
 .accountStatusflag{
     opacity: 0.5;
     pointer-events: none;
+  }
+  .padding4table{
+      padding: 0 1vh 0 0;
+  }
+  .col-md-4 h1{
+      margin:0 0 2vh 0;
+  }
+  .slide{
+      margin-bottom: 2vh!important;
   }
