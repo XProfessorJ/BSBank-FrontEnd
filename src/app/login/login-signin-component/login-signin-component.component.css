@@ -93,4 +93,27 @@ input{
 a{
     text-decoration: none;
 }
-
+.loading{
+    display: none;
+    position: absolute;
+    top: 30%;
+    right: 15%;
+    margin: 100px auto;
+            width: 2px;
+            height: 2px;
+            border-radius: 1px;
+            box-shadow: 0 -12px 0 3px black, 0 12px 0 1px #333, -12px 0 0 -1px #333, 12px 0 0 2px #333, -9px -9px 0 -1px #333, 9px -9px 0 2px #333, -9px 9px 0 0px #333, 9px 9px 0 1px #333
+            ;
+            animation: loading 1.5s linear 0s infinite;
+            /* -webkit-animation: loading 2s linear 0s infinite; */
+            /* -o-animation: loading 2s linear 0s infinite; */
+            /* -moz-animation: loading 2s linear 0s infinite; */
+}
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

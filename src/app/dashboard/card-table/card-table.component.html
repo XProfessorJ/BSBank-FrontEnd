@@ -1,4 +1,11 @@
-<p>Hi, {{customer.names}}</p>
+<div style="display: inline-block" [ngSwitch]="customer.gender">
+    <p>Hi,
+      <a *ngSwitchCase="0">Mr.</a>
+      <a *ngSwitchCase="1">Miss.</a>
+      {{customer.names}}</p>
+    <img class="name_title" *ngSwitchCase="0"  src="assets/images/tie.png" />
+    <img class="name_title" *ngSwitchCase="1"  src="assets/images/shoe.png" />
+</div>
 <div class="container margintop4container">
     <div class="row clearfix">
       <div class="col-md-8 column padding4table">
@@ -12,7 +19,7 @@
             </div>
             <div id="panel-element-investment" class="panel-collapse in">
               <div class="panel-body">
-                  <table class="table table-striped table-hover">
+                  <table class="table table-hover">
                       <caption *ngIf="!investmentCards">该账户下无卡</caption>
                       <thead *ngIf="investmentCards">
                         <tr>
@@ -45,7 +52,7 @@
             </div>
             <div id="panel-element-saving" class="panel-collapse in">
               <div class="panel-body">
-                  <table class="table table-striped table-hover">
+                  <table class="table table-hover">
                       <!-- <caption>条纹表格布局</caption> -->
                       <caption *ngIf="!savingCards">该账户下无卡</caption>
                       <thead *ngIf="savingCards">
@@ -79,7 +86,7 @@
               </div>
               <div id="panel-element-credit" class="panel-collapse in">
                 <div class="panel-body">
-                    <table class="table table-striped table-hover">
+                    <table class="table  table-hover">
                         <!-- <caption>条纹表格布局</caption> -->
                         <caption *ngIf="!creditCards">该账户下无卡</caption>
                         <thead *ngIf="creditCards">

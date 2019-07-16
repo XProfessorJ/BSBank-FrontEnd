@@ -20,11 +20,13 @@ export class LoginSigninComponentComponent implements OnInit {
     this.customerService.userLogin(this.userId,this.password).subscribe(data=>{
       this.map=data;
       if(this.map['token']!=null){
-        this.router.navigate(['/dashboard']);
-        alert('登录成功');
+        // alert('登录成功');
+        document.getElementById("loading").style.display="inline-block";
+        document.getElementById("signon_form").style.filter="blur(0.9px)";
         setTimeout(() => {
           localStorage.setItem('token',this.map['token']);
-        }, 1000);
+          this.router.navigate(['/dashboard']);
+        }, 1500);
       }
       else{
         alert("用户名密码错误！");
