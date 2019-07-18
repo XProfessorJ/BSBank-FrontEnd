@@ -71,11 +71,13 @@ a{
     position: absolute;
     top:7.5vh;
     
+    
 }
 #tabOne{
     width:100%;
     background-color: #fff;
     display:none;
+    
 }
 .tabOneLink{
     display: inline-block;
@@ -149,6 +151,9 @@ a{
    margin-bottom:20px;
    position:relative;
 }
+.text-justify{
+    text-align: justify;
+}
 .minPic{
     display: block;
     width:330px;
@@ -181,4 +186,25 @@ a{
     margin-top:20px;
     text-align:justify;
     
+}
+
+.minIcon{
+
+    display: inline-block;
+    margin-top:10px;
+    width:40%;
+}
+.minIcon>.smIcon{
+    display: inline-block;
+    
+}
+.minIcon:hover{
+    color:#e10a0a;
+
+}
+.minIcon>p{
+    display: inline-block;
+}
+a{
+    cursor: pointer;;
 }

@@ -27,6 +27,8 @@ export class LoginNavTitleComponent implements OnInit {
     if(this.countOne==1){
       document.getElementById("tabOne").style.display = "inline-block";
       document.getElementById("down_arrowOne").style.transform = "rotate(-180deg)";
+      document.getElementById("down_arrowTwo").style.transform = "rotate(0)"
+      document.getElementById("down_arrowThree").style.transform = "rotate(0)"
     }else{
       this.countOne=0;
       document.getElementById("tabOne").style.display = "none";
@@ -41,6 +43,8 @@ export class LoginNavTitleComponent implements OnInit {
     if(this.countTwo==1){
       document.getElementById("tabTwo").style.display = "inline-block";
       document.getElementById("down_arrowTwo").style.transform = "rotate(-180deg)";
+      document.getElementById("down_arrowOne").style.transform = "rotate(0)"
+      document.getElementById("down_arrowThree").style.transform = "rotate(0)"
      
     }else{
       this.countTwo=0;
@@ -56,6 +60,8 @@ export class LoginNavTitleComponent implements OnInit {
     if(this.countThree==1){
       document.getElementById("tabThree").style.display = "inline-block";
       document.getElementById("down_arrowThree").style.transform = "rotate(-180deg)";
+      document.getElementById("down_arrowOne").style.transform = "rotate(0)"
+      document.getElementById("down_arrowTwo").style.transform = "rotate(0)"
     }else{
       this.countThree=0;
       document.getElementById("tabThree").style.display = "none";
