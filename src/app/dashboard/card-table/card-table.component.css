@@ -8,6 +8,8 @@
 }
 p{
     font-size: 5vh;
+    display:inline-block;
+    margin-bottom: 1vh;
 }
 .accountStatusflag{
     opacity: 0.5;
@@ -20,5 +22,14 @@ p{
       margin:0 0 2vh 0;
   }
   .slide{
-      margin-bottom: 2vh!important;
+      margin: 3vh 0 2vh 0!important;
+  }
+  .name_title{
+      display: inline-block;
+      height: 6vh;
+      margin-bottom: 3vh;
+  }
+  p a{
+    text-decoration: none;
+    color:inherit;
   }
