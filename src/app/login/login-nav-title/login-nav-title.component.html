@@ -6,21 +6,150 @@
     <div class='nav_lable'>
         <ul>
             <li class="big_li">
-                <a>Our Product</a>
-                <img id="down_arrow" class="down_arrow" src="assets/images/down-arror.png">
+                <a (click)="clickOne()" >Our Product</a>
+                <img id="down_arrowOne" class="down_arrow" src="assets/images/down-arror.png">
             </li>
             <li class="big_li">
-                <a>For Business</a>
-                <img id="down_arrow" class="down_arrow" src="assets/images/down-arror.png">
+                <a (click)="clickTwo()" >For Business</a>
+                <img id="down_arrowTwo" class="down_arrow" src="assets/images/down-arror.png">
             </li>
             <li class="big_li">
-                <a>Your Life</a>
-                <img id="down_arrow" class="down_arrow" src="assets/images/down-arror.png">
+                <a (click)="clickThree()" >Your Life</a>
+                <img id="down_arrowThree" class="down_arrow" src="assets/images/down-arror.png">
             </li>
         </ul>
     </div>
     <div class="help_div">
         <a class="big_li help_a">Help</a>
         <a class="big_li help_a">Find Us</a>
+    </div>
+    <div class="content">
+        <nav id="tabOne">
+            <a href="#" class="tabOneLink">                 
+                 <div class="minPhoto">
+                    <img src="assets/images/prod-icons-current-account.svg" alt>
+                 </div>   
+                 <p class="minTips">Accounts</p>                  
+            </a>
+            <a href="#" class="tabOneLink">              
+                  <div class="minPhoto">
+                     <img src="assets/images/prod-icons-savings.svg" alt>
+                  </div>   
+                  <p class="minTips">Savings</p>                     
+            </a>
+            <a href="#" class="tabOneLink">              
+                <div class="minPhoto">
+                   <img src="assets/images/prod-icons-investment.svg" alt>
+                </div>   
+                <p class="minTips">Investment</p>                     
+            </a>
+            <a href="#" class="tabOneLink">              
+                <div class="minPhoto">
+                   <img src="assets/images/prod-icons-insurance.svg" alt>
+                </div>   
+                <p class="minTips">Insurance</p>                     
+            </a>
+            <a href="#" class="tabOneLink">              
+                <div class="minPhoto">
+                   <img src="assets/images/prod-icons-card.svg" alt>
+                </div>   
+             <p class="minTips">Cards</p>                     
+            </a>
+            <a href="#" class="tabOneLink">              
+                <div class="minPhoto">
+                   <img src="assets/images/prod-icons-mortgages.svg" alt>
+                </div>   
+             <p class="minTips">Mortgages</p>                     
+            </a>
+            
+        </nav>
+        <nav id="tabTwo">
+           <div class="textTab">
+                <a href="#"><h1>Business home ></h1></a>  
+                <p>With our range of business savings accounts,
+                    we're working hard to help UK businesses grow and thrive.
+                And this is just the beginning of our journey.</p>
+                <div class="text-justify">
+                    <a><p>Business Access Savings Account</p></a>
+                    <a><p>Questions and answers</p></a>
+                    <a><p>1 Year Business Fixed Rate Savings</p></a>
+                    <a><p>Existing Customer</p></a>
+                </div>
+           </div>
+           <div class="picTab">
+                <div class="minPic">
+                    <div class="smPic">
+                        <img src="assets/images/jim-cregan-author.jpg" alt>
+                    </div>
+                    <div class="minText">
+                        <p>Business owners shouldn't have to sacrifice their personal life.</p>
+                    </div>                 
+                </div>
+                <div class="minPic">
+                    <div class="smPic">
+                        <img src="assets/images/sam-hall-author.jpg" alt>
+                    </div>
+                    <div class="minText">
+                        <p>Four habits of successful entrepreneurs.</p>
+                    </div>
+                    
+                </div>
+           </div>
+      
+        </nav>
+
+        <nav id="tabThree">
+                <div class="textTab">
+                    <a><h1>BS Bank <div class="toRed">Living ></div></h1></a>
+                    <p>Smart suggestions and inspirational ideas from 
+                        experts to help you plan the big decisions in your life.</p>
+                    <div >
+                       <a class="minIcon">
+                           <div class="smIcon">
+                                <img src="assets/images/better-with-money.svg" alt>
+                           </div>
+                           <p>Being better with money</p>
+                        </a>
+                       <a class="minIcon">
+                           <div class="smIcon">
+                                <img src="assets/images/loved-ones.svg" alt>
+                            </div>
+                           <p>Looking after your lovers</p>
+                        </a>
+                       <a class="minIcon">
+                           <div class="smIcon">
+                                <img src="assets/images/enjoying-retirement.svg" alt>
+                            </div>
+                           <p>Enjoying retirement</p>
+                        </a>
+                       <a class="minIcon">
+                           <div class="smIcon">
+                                <img src="assets/images/saving-for-future.svg" alt>
+                           </div>
+                           <p>Saving for the future </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="picTab">
+                        <div class="minPic">
+                            <div class="smPic">
+                                <img src="assets/images/eight-ways-to-save.jpg" alt>
+                            </div>
+                            <div class="minText">
+                                <p>Eight great ways to save money.</p> 
+                            </div>                 
+                        </div>
+                        <div class="minPic">
+                            <div class="smPic">
+                                <img src="assets/images/smart-ways-to-use-credit-cards.jpg" alt>
+                            </div>
+                            <div class="minText">
+                                <p>Four smart ways to use your credit card.</p>
+                            </div>
+                            
+                        </div>
+                   </div>
+            </nav>
+
     </div>
 </div>
