@@ -5,6 +5,7 @@
     padding: 0;
     position: relative;
     margin-top: 1vh;
+    color:#666;
 }
 .virgin_logo_div{
      display: inline-flex;
@@ -23,6 +24,9 @@
 .down_arrow{
     height: 2vh;
     vertical-align: middle;
+    transform: rotate(0);
+    transition: 1s;
+
 }
 ul{
     margin: 0 0 0 3vh;
@@ -55,4 +59,126 @@ li:hover{
 }
 a{
     font-size: 2vh;
+}
+
+/*nav 选项卡1*/
+.content{
+    width:100%;
+    background-color: #fff;
+    z-index:99999;
+    border:3px solid #f7f5f6c7;
+    border-top:0;
+    position: absolute;
+    top:7.5vh;
+    
+}
+#tabOne{
+    width:100%;
+    background-color: #fff;
+    display:none;
+}
+.tabOneLink{
+    display: inline-block;
+    position: relative;
+    z-index:9999;
+    width:100px;
+    height:110px;
+    vertical-align: middle;
+    text-align:center;
+    margin-left:50px;
+}
+.minPhoto{
+    position:relative;   
+    display: table-cell;
+    vertical-align: middle;
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    background-color:#f7f5f6c7;
+    margin-left:20px;
+    top:20%;
+    left:10%;
+}
+.minPhoto img{
+    position: absolute;
+    display: inline-block;
+    width:60px;
+    height:60px;
+    top:10%;
+    left:10%;
+}
+.minTips{
+    color:#666;
+}
+
+/*选项卡2*/
+#tabTwo,#tabThree{
+    margin-left:10%;
+    display:none;
+    /* position: absolute; */
+    background-color: #fff;
+ 
+   
+}
+#tabTwo{
+    display: none;
+}
+.textTab{
+    width:60%;
+    position: relative;
+    top:-50px;
+
+    display: inline-block;
+}
+.toRed{
+    color:#e10a0a;
+    display: inline-block;
+}
+a{
+    color: #666;
+}
+#tabTwo a,#tabThree a{
+    
+    display:inline-block;
+    margin-right: 20px;
+}
+.picTab{
+   width:40%;
+   display:inline-block;
+   margin-top:20px;
+   margin-bottom:20px;
+   position:relative;
+}
+.minPic{
+    display: block;
+    width:330px;
+    height:100px;
+    border:1px solid #f7f5f6c7;
+    margin-bottom:10px;
+    position: relative;;
+}
+.minPic:hover{
+    border:1px solid #e10a0a;
+}
+.minPic>.smPic{
+    display: inline-block;
+    position: absolute;
+    top:12px;
+    left:15px;
+    width:30%;
+}
+.smPic>img{
+   width:75px;
+   height: 75px;
+
+  
+}
+.minPic>.minText{
+    position: absolute;
+    left:100px;
+    display: inline-block;
+    width:60%;
+    margin-top:20px;
+    text-align:justify;
+    
 }
