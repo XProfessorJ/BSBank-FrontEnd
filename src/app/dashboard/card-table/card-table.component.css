@@ -33,3 +33,40 @@ p{
     text-decoration: none;
     color:inherit;
   }
+.transaction_icon{
+    height: 3vh;
+    padding-left: 1vh;
+    position: relative;
+}
+.transaction_icon::after{
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    padding: 5px;
+    background-color: #0095ff;
+    border-radius: 5px;
+    color: #fff;
+    /*这里显示的内容为表格中自定义的labelTooltip属性对应的值*/
+    /* content: attr(labelTooltip); */
+    content: "asdfasd";
+    z-index: 99;
+    width: 120px;
+}
+.transaction_button{
+    display: inline-block;
+    cursor: pointer;
+}
+.caption_no_cards{
+    display: inline-block;
+    padding-left: 5vh;
+}
+.no_decoration_a{
+    text-decoration: none;
+    color:inherit;
+}
+.pagination{
+    margin: 0;
+}
+.table{
+    margin: 0;
+}

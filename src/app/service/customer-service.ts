@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { UserLogin } from '../model/UserLogin';
-import { TokenEntity } from '../model/TokenEntity';
 import { AccountWithTokenEntity } from '../model/AccountWithTokenEntity';
+import { CardIdWithTokenEntity } from '../model/CardIdWithTokenEntity';
 
 const httpOptions = {
   headers: new HttpHeaders({'content-Type': 'application/json','async':'false','Access-Control-Allow-Origin':'*'})
@@ -29,4 +29,9 @@ export class CustomerService {
       return this.httpClient.post<any>(this.customerUrl + '/account/queryCards',
       {accountId,token} as AccountWithTokenEntity,httpOptions)
     }
+    queryTransactionRecords(cardId,pagenum,pagerow):Observable<any>{
+      var token=localStorage.getItem('token');
+      return this.httpClient.post<any>(this.customerUrl + '/account/queryTransrecords',
+      {cardId,token,pagenum,pagerow} as CardIdWithTokenEntity,httpOptions)
+    } 
 }

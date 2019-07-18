@@ -22,14 +22,14 @@ export class LoginSigninComponentComponent implements OnInit {
       if(this.map['token']!=null){
         // alert('登录成功');
         document.getElementById("loading").style.display="inline-block";
-        document.getElementById("signon_form").style.filter="blur(0.9px)";
+        document.getElementById("signon_form").style.filter="blur(0.95px)";
         setTimeout(() => {
           localStorage.setItem('token',this.map['token']);
           this.router.navigate(['/dashboard']);
         }, 1500);
       }
       else{
-        alert("用户名密码错误！");
+        alert("用户名或密码错误！");
       }
     });
   }
