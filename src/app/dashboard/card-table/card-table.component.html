@@ -1,11 +1,11 @@
-<div style="display: inline-block" [ngSwitch]="customer.gender">
-    <p>Hi,
+<div style="display: inline-block;" [ngSwitch]="customer.gender">
+    <p>{{sayHello}}
       <a *ngSwitchCase="0">Mr.</a>
       <a *ngSwitchCase="1">Miss.</a>
       {{customer.names}}</p>
     <img class="name_title" *ngSwitchCase="0"  src="assets/images/tie.png" />
     <img class="name_title" *ngSwitchCase="1"  src="assets/images/shoe.png" />
-</div>
+  </div>
 <div class="container margintop4container">
     <div class="row clearfix">
       <div class="col-md-8 column padding4table">
@@ -36,7 +36,7 @@
                             <td>{{card.productName}}</td>
                           <td>{{card.displayAccountNumber | cardDisplayNumberFormat}} 
                             <div class="transaction_button"  data-toggle="modal" data-target="#transaction">
-                            <span class="badge" (click)="getTransactionRecords(card.cardId)">Record</span>
+                            <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
                             </div>
                           </td>
                           <td>{{card.currencyCode}}</td>
@@ -49,7 +49,7 @@
                           <td>{{card.productName}}</td>
                             <td>{{card.displayAccountNumber | cardDisplayNumberFormat}} 
                               <div class="transaction_button"  data-toggle="modal" data-target="#transaction">
-                              <span class="badge" (click)="getTransactionRecords(card.cardId)">Record</span>
+                              <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
                               </div>
                             </td>
                             <td>{{card.currencyCode}}</td>
@@ -80,19 +80,18 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active">
-                    <img alt="" src="assets/images/pic4.jpg" />
+                    <img alt="" src="assets/images/bank3.jpg" />
                     <div class="carousel-caption">
                       <h4>
-                         Grid T-Shirt
+                          BS Bank
                       </h4>
                       <p>
-                        IT Guys' Style
+                          Customer Info
                       </p>
-
                     </div>
                   </div>
                   <div class="item">
-                    <img alt="" src="assets/images/pic5.jpg" />
+                    <img alt="" src="assets/images/bank2.jpg" />
                     <div class="carousel-caption">
                       <h4>
                         Environment Protection
@@ -103,13 +102,13 @@
                     </div>
                   </div>
                   <div class="item">
-                    <img alt="" src="assets/images/pic3.jpg" />
+                    <img alt="" src="assets/images/bank3.jpg" />
                     <div class="carousel-caption">
                       <h4>
-                        Sport never Stop
+                          Environment Protection
                       </h4>
                       <p>
-                        Please Do it
+                          Classify the litter
                       </p>
                     </div>
                   </div>
@@ -161,17 +160,17 @@
                     </tbody>
                 </table>
                 <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
+                    <li><a>&laquo;</a></li>
                     <li>
                       <a *ngFor="let index of totalPage" (click)="getTransactionRecords(null,index)">{{index}}</a>
                     </li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
+                    <li><a>&raquo;</a></li>
+                </ul> 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭
             </button>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal -->
+        </div>
+      </div>
     </div>

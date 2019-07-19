@@ -3,3 +3,10 @@
 .margin-part{
     margin: 0 12%;
 }
+.left_move{
+    padding-right:11vh;
+}
+.btn{
+    float: right;
+    transform: translateY(-130%);
+}

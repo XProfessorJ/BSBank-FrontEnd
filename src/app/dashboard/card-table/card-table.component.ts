@@ -25,6 +25,7 @@ export class CardTableComponent implements OnInit {
   private totalPage:Array<number>=new Array;
   private pageNumber;
   private cardId;
+  private sayHello;
   constructor(
     private customerService:CustomerService,
     private router: Router,
@@ -33,6 +34,19 @@ export class CardTableComponent implements OnInit {
   ngOnInit() {
     this.getAllCustomerAccounts();
     // this.getCreditCards();
+    var date = new Date();
+    if(date.getHours()<12&&date.getHours()>6){
+      this.sayHello="Good Morning,";
+    }
+    if(12<date.getHours()&&date.getHours()<18){
+      this.sayHello="Good Afternoon,";
+    }
+    if(18<date.getHours()&&date.getHours()<22){
+      this.sayHello="Good Evening,";
+    }
+    if(22<date.getHours()||date.getHours()<6){
+      this.sayHello="Good Night,";
+    }
   }
 
   getCreditCards(){
@@ -79,13 +93,5 @@ export class CardTableComponent implements OnInit {
         console.log(this.totalPage)
       }
     });
-  }
-  test(){
-    this.customerService.queryTransactionRecords(1,1,1).subscribe(
-      data=>{
-          
-      }
-    );
-
   }
 }
