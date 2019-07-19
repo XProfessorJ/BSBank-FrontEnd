@@ -80,4 +80,12 @@ export class CardTableComponent implements OnInit {
       }
     });
   }
+  test(){
+    this.customerService.queryTransactionRecords(1,1,1).subscribe(
+      data=>{
+          
+      }
+    );
+
+  }
 }

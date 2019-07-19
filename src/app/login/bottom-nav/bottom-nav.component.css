@@ -1,6 +1,7 @@
 .FootList{
     float: left;
-    padding-right: 70px;
+    padding-right: 64px;
+    padding-left:0;
     font-size:15px;
     line-height:30px;
     color:white;
@@ -11,6 +12,7 @@
 }
 div.FootList ul li a{
     color: #FFF;
+    
 }
 #footline{
     left:50%;

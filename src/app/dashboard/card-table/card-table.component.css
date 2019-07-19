@@ -70,3 +70,8 @@ p{
 .table{
     margin: 0;
 }
+.welcome{
+    display: inline-block;
+    margin: 0;
+    margin-left: 5vh;
+}

@@ -63,10 +63,10 @@ a{
 
 /*nav 选项卡1*/
 .content{
-    width:100%;
+    width:101%;
     background-color: #fff;
     z-index:99999;
-    border:3px solid #f7f5f6c7;
+    /* border:3px solid #f7f5f6c7; */
     border-top:0;
     position: absolute;
     top:6.5vh;
