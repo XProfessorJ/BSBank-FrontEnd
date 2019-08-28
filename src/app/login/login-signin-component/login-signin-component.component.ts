@@ -9,40 +9,40 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginSigninComponentComponent implements OnInit {
   private userId;
   private password;
-  private map:Map<String,String>;
+  private map: Map<String, String>;
   constructor(
-    private customerService:CustomerService,
+    private customerService: CustomerService,
     private router: Router,
   ) { }
   ngOnInit() {
   }
-  login(){
-    this.customerService.userLogin(this.userId,this.password).subscribe(data=>{
-      this.map=data;
-      if(this.map['token']!=null){
+  login() {
+    this.customerService.userLogin(this.userId, this.password).subscribe(data => {
+      this.map = data;
+      if (this.map['token'] != null) {
         // alert('登录成功');
-        document.getElementById("loading").style.display="inline-block";
-        document.getElementById("signon_form").style.filter="blur(0.95px)";
+        document.getElementById("loading").style.display = "inline-block";
+        document.getElementById("signon_form").style.filter = "blur(0.95px)";
+        localStorage.setItem('token', this.map['token']);
+        localStorage.setItem('customerId',this.map['customer']['customerId'])
         setTimeout(() => {
-          localStorage.setItem('token',this.map['token']);
           this.router.navigate(['/dashboard']);
         }, 1500);
       }
-      else{
+      else {
         alert("用户名或密码错误！");
       }
     });
   }
 
-  upperCase(){
-    if(!(/^1[34578]\d{9}$/.test(this.userId))){
-      document.getElementById("closeCircle").style.display="inline-block";
-    }else{
-      document.getElementById("closeCircle").style.display="none";
+  upperCase() {
+    if (!(/^1[34578]\d{9}$/.test(this.userId))) {
+      document.getElementById("closeCircle").style.display = "inline-block";
+    } else {
+      document.getElementById("closeCircle").style.display = "none";
     }
-
   }
-  
+
 
 
 

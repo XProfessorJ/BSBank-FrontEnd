@@ -1,0 +1,19 @@
+{
+  "actions": [
+    {
+      "id": "1",
+      "description": "Guess you may need to transfer money today.",
+      "priority": 1.3
+    },
+    {
+      "id": "2",
+      "description": "The credit card repayment date has arrived. Do you need to repay it?",
+      "priority": 5.5
+    },
+    {
+      "id": "3",
+      "description": "Welcome to CitiBank, we are always ready to provide you with a detailed guide!",
+      "priority": 0.1
+    }
+  ]
+}

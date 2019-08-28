@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { LoginNavTitleComponent } from './login/login-nav-title/login-nav-title.component';
 import { LoginSigninComponentComponent } from './login/login-signin-component/login-signin-component.component';
 import { BlocksNavComponent } from './login/blocks-nav/blocks-nav.component';

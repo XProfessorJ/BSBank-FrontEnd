@@ -1,176 +1,202 @@
-<div style="display: inline-block;" [ngSwitch]="customer.gender">
-    <p>{{sayHello}}
-      <a *ngSwitchCase="0">Mr.</a>
-      <a *ngSwitchCase="1">Miss.</a>
-      {{customer.names}}</p>
-    <img class="name_title" *ngSwitchCase="0"  src="assets/images/tie.png" />
-    <img class="name_title" *ngSwitchCase="1"  src="assets/images/shoe.png" />
-  </div>
-<div class="container margintop4container">
-    <div class="row clearfix">
-      <div class="col-md-8 column padding4table">
-        <div class="panel-group">
-          <div class="panel panel-default" *ngFor="let account of cardList">
-            <div class="panel-heading"> 
-               <a class="panel-title collapsed" data-toggle="collapse"  href="#{{account['account'].accountId}}">
-                  <button class="btn btn-danger" type="button">
-                      {{account['account'].accountType}} Account <span class="badge">{{account['cards'].savingcards.length+account['cards'].creditcards.length}}</span>
-                    </button></a>
-                    <a><caption class="caption_no_cards" *ngIf="account['cards'].savingcards.length==0&&account['cards'].creditcards.length==0">该账户暂未绑定任何卡</caption></a>
-            </div>
-            <div id="{{account['account'].accountId}}" class="panel-collapse in">
-              <div class="panel-body" *ngIf="!account['cards'].savingcards.length==0||!account['cards'].creditcards.length==0">
-                  <table class="table table-hover">
-                      <thead>
-                        <tr>
-                            <th>ProductName</th>
-                          <th>Card Number</th>
-                          <th>Currency</th>
-                          <th>CurrentBalance</th>
-                          <th>AvailableBalance</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody >
-                        <tr  *ngFor="let card of account['cards'].savingcards">
-                            <td>{{card.productName}}</td>
-                          <td>{{card.displayAccountNumber | cardDisplayNumberFormat}} 
-                            <div class="transaction_button"  data-toggle="modal" data-target="#transaction">
-                            <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
-                            </div>
-                          </td>
-                          <td>{{card.currencyCode}}</td>
-                          <td>{{card.currentBalance| number: '1.2-4'}}</td>
-                          <td>{{card.availableBalance| number: '1.2-4'}}</td>
-                          <td>{{card.accountStatus}}</td>
-                          
-                        </tr>
-                        <tr *ngFor="let card of account['cards'].creditcards">
-                          <td>{{card.productName}}</td>
-                            <td>{{card.displayAccountNumber | cardDisplayNumberFormat}} 
-                              <div class="transaction_button"  data-toggle="modal" data-target="#transaction">
-                              <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
-                              </div>
-                            </td>
-                            <td>{{card.currencyCode}}</td>
-                            <td>{{card.currentBalance| number: '1.2-4'}}</td>
-                            <td>{{card.availableBalance| number: '1.2-4'}}</td>
-                            <td>{{card.accountStatus}}</td>
-                            
-                          </tr>
-                      </tbody>
-                    </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-          <div class="col-md-4 column">
-                  <h1>
-                    Welcome to BSBank <small>Better Service Better Experience</small>
-                  </h1>
-              <div class="carousel slide" id="carousel-345056">
-                <ol class="carousel-indicators">
-                  <li class="active" data-slide-to="0" data-target="#carousel-345056">
-                  </li>
-                  <li data-slide-to="1" data-target="#carousel-345056">
-                  </li>
-                  <li data-slide-to="2" data-target="#carousel-345056">
-                  </li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <img alt="" src="assets/images/bank3.jpg" />
-                    <div class="carousel-caption">
-                      <h4>
-                          BS Bank
-                      </h4>
-                      <p>
-                          Customer Info
-                      </p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img alt="" src="assets/images/bank2.jpg" />
-                    <div class="carousel-caption">
-                      <h4>
-                        Environment Protection
-                      </h4>
-                      <p>
-                        Classify the litter
-                      </p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img alt="" src="assets/images/bank3.jpg" />
-                    <div class="carousel-caption">
-                      <h4>
-                          Environment Protection
-                      </h4>
-                      <p>
-                          Classify the litter
-                      </p>
-                    </div>
-                  </div>
-                </div> <a class="left carousel-control" href="#carousel-345056" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-345056" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-              </div>
-      </div>
-    </div>
-  </div>
+<div style="display: inline-block;" [ngSwitch]="customer?.gender">
+  <p>{{sayHello}}
+    <a *ngSwitchCase="0">Mr.</a>
+    <a *ngSwitchCase="1">Miss.</a>
+    {{customer?.names}}</p>
+  <img class="name_title" *ngSwitchCase="0" src="assets/images/tie.png" />
+  <img class="name_title" *ngSwitchCase="1" src="assets/images/shoe.png" />
 
-  <!-- transaction Modal -->
-  <div class="modal fade" id="transaction" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-              &times;
-            </button>
-            <h4 class="modal-title" id="myModalLabel">
-              交易详情
-            </h4>
+  <div id="actionInfo" class="inlineDiv" (mouseover)="redClose()" (mouseleave)="greyClose()">
+      <div id="actionGuide" *ngFor="let item of actionInfo.actions" >
+          <div *ngIf="item.id==2">
+            <a>{{item.description}}</a> 
           </div>
-          <div class="modal-body">
+       </div>
+       <div id="closeBtn" (click)="actionCancel()">
+          <img src="assets/images/close-circle-grey.png" id="greyClose" alt="close"/>
+          <img src="assets/images/close-circle-red.png" id="redClose" alt="close"/>
+       </div>
+       
+
+  </div>
+  
+  
+  
+
+</div>
+<div class="container margintop4container">
+  <div class="row clearfix">
+    <div class="col-md-8 column padding4table">
+      <div class="panel-group">
+        <div class="panel panel-default" *ngFor="let account of cardList">
+          <div class="panel-heading">
+            <a class="panel-title collapsed" data-toggle="collapse" href="#{{account['account'].accountId}}">
+              <button class="btn btn-danger" type="button">
+                {{account['account'].accountType}} Account <span
+                  class="badge">{{account['cards'].savingcards.length+account['cards'].creditcards.length}}</span>
+              </button></a>
+            <a>
+              <caption class="caption_no_cards"
+                *ngIf="account['cards'].savingcards.length==0&&account['cards'].creditcards.length==0">该账户暂未绑定任何卡
+              </caption>
+            </a>
+          </div>
+          <div id="{{account['account'].accountId}}" class="panel-collapse in">
+            <div class="panel-body"
+              *ngIf="!account['cards'].savingcards.length==0||!account['cards'].creditcards.length==0">
               <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>Opposite Card</th>
-                      <th>Time</th>
-                      <th>InOrOut</th>
-                      <th>Amount</th>
-                      <!-- <th>Balance</th> -->
-                      <th>Summary</th>
-                      <!-- <th>Postscript</th> -->
-                    </tr>
-                  </thead>
-                  <caption class="caption_no_cards" *ngIf="0">该卡暂无任何记录</caption>
-                  <tbody >
-                      <tr *ngFor="let record of transactionRecords">
-                        <td>{{record.displayAccountNumber | cardDisplayNumberFormat}}</td>
-                        <td>{{record.time | date:"MM/dd/yy"}}</td>
-                        <td [ngSwitch]="customer.gender">
-                            <a class="no_decoration_a" *ngSwitchCase="0">转出</a>
-                            <a class="no_decoration_a" *ngSwitchCase="1">转入</a>
-                        </td>
-                        <td>{{record.amount| number: '1.2-4'}}</td>
-                        <td>{{record.balance| number: '1.2-4'}}</td>
-                        <!-- <td>{{record.summary}}</td> -->
-                        <!-- <td>{{record.postscript | date:"MM/dd/yy"}}</td> -->
-                      </tr>
-                    </tbody>
-                </table>
-                <ul class="pagination">
-                    <li><a>&laquo;</a></li>
-                    <li>
-                      <a *ngFor="let index of totalPage" (click)="getTransactionRecords(null,index)">{{index}}</a>
-                    </li>
-                    <li><a>&raquo;</a></li>
-                </ul> 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-            </button>
+                <thead>
+                  <tr>
+                    <th>ProductName</th>
+                    <th>Card Number</th>
+                    <th>Currency</th>
+                    <th>CurrentBalance</th>
+                    <th>AvailableBalance</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let card of account['cards'].savingcards">
+                    <td>{{card.productName}}</td>
+                    <td>{{card.displayAccountNumber | cardDisplayNumberFormat}}
+                      <div class="transaction_button" data-toggle="modal" data-target="#transaction">
+                        <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
+                      </div>
+                    </td>
+                    <td>{{card.currencyCode}}</td>
+                    <td>{{card.currentBalance| number: '1.2-4'}}</td>
+                    <td>{{card.availableBalance| number: '1.2-4'}}</td>
+                    <td>{{card.accountStatus}}</td>
+
+                  </tr>
+                  <tr *ngFor="let card of account['cards'].creditcards">
+                    <td>{{card.productName}}</td>
+                    <td>{{card.displayAccountNumber | cardDisplayNumberFormat}}
+                      <div class="transaction_button" data-toggle="modal" data-target="#transaction">
+                        <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
+                      </div>
+                    </td>
+                    <td>{{card.currencyCode}}</td>
+                    <td>{{card.currentBalance| number: '1.2-4'}}</td>
+                    <td>{{card.availableBalance| number: '1.2-4'}}</td>
+                    <td>{{card.accountStatus}}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="col-md-4 column">
+      <h1>
+        Welcome to BSBank <small>Better Service Better Experience</small>
+      </h1>
+      <div class="carousel slide" id="carousel-345056">
+        <ol class="carousel-indicators">
+          <li class="active" data-slide-to="0" data-target="#carousel-345056">
+          </li>
+          <li data-slide-to="1" data-target="#carousel-345056">
+          </li>
+          <li data-slide-to="2" data-target="#carousel-345056">
+          </li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img alt="" src="assets/images/fundNew2.jpg" />
+            <div class="carousel-caption">
+              <h4>
+                BS Bank Fund
+              </h4>
+              <p>
+                Invest for the future
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img alt="" src="assets/images/stockNew.jpg" />
+            <div class="carousel-caption">
+              <h4>
+                Stock Market
+              </h4>
+              <p>
+                Gain the Profit
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img alt="" src="assets/images/insuranceNew.jpg" />
+            <div class="carousel-caption">
+              <h4>
+                Choose Insurances
+              </h4>
+              <p>
+                Better security
+              </p>
+            </div>
+          </div>
+        </div> <a class="left carousel-control" href="#carousel-345056" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control"
+          href="#carousel-345056" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- transaction Modal -->
+<div class="modal fade" id="transaction" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          交易详情
+        </h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Opposite Card</th>
+              <th>Time</th>
+              <th>InOrOut</th>
+              <th>Amount</th>
+              <!-- <th>Balance</th> -->
+              <th>Summary</th>
+              <!-- <th>Postscript</th> -->
+            </tr>
+          </thead>
+          <caption class="caption_no_cards" *ngIf="0">该卡暂无任何记录</caption>
+          <tbody>
+            <tr *ngFor="let record of transactionRecords">
+              <td>{{record.displayAccountNumber | cardDisplayNumberFormat}}</td>
+              <td>{{record.time | date:"MM/dd/yy"}}</td>
+              <td [ngSwitch]="record.inOrOut">
+                <a class="no_decoration_a" *ngSwitchCase="0">转出</a>
+                <a class="no_decoration_a" *ngSwitchCase="1">转入</a>
+              </td>
+              <td>{{record.amount| number: '1.2-4'}}</td>
+              <td>{{record.balance| number: '1.2-4'}}</td>
+              <!-- <td>{{record.summary}}</td> -->
+              <!-- <td>{{record.postscript | date:"MM/dd/yy"}}</td> -->
+            </tr>
+          </tbody>
+        </table>
+        <ul class="pagination">
+          <li><a>&laquo;</a></li>
+          <li>
+            <a *ngFor="let index of totalPage" (click)="getTransactionRecords(null,index)">{{index}}</a>
+          </li>
+          <li><a>&raquo;</a></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

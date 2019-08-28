@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
 @Component({
   selector: 'app-login-nav-title',
   templateUrl: './login-nav-title.component.html',
   styleUrls: ['./login-nav-title.component.css']
 })
-export class LoginNavTitleComponent implements OnInit {
 
+export class LoginNavTitleComponent implements OnInit {
+  @Input() Test:string;
   private tabOne;
   private tabTwo;
   private tabThree;
@@ -18,7 +20,7 @@ export class LoginNavTitleComponent implements OnInit {
 
   ngOnInit() {
   }
-
+    
   //导航栏效果
   clickOne(){
     document.getElementById("tabTwo").style.display = "none";
