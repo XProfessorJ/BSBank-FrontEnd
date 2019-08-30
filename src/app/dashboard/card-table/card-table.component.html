@@ -7,21 +7,21 @@
   <img class="name_title" *ngSwitchCase="1" src="assets/images/shoe.png" />
 
   <div id="actionInfo" class="inlineDiv" (mouseover)="redClose()" (mouseleave)="greyClose()">
-      <div id="actionGuide" *ngFor="let item of actionInfo.actions" >
-          <div *ngIf="item.id==2">
-            <a>{{item.description}}</a> 
-          </div>
-       </div>
-       <div id="closeBtn" (click)="actionCancel()">
-          <img src="assets/images/close-circle-grey.png" id="greyClose" alt="close"/>
-          <img src="assets/images/close-circle-red.png" id="redClose" alt="close"/>
-       </div>
-       
+    <div id="actionGuide" *ngFor="let item of actionInfo?.actions">
+      <div *ngIf="item.id==2">
+        <a>{{item.description}}</a>
+      </div>
+    </div>
+    <div id="closeBtn" (click)="actionCancel()">
+      <img src="assets/images/close-circle-grey.png" id="greyClose" alt="close" />
+      <img src="assets/images/close-circle-red.png" id="redClose" alt="close" />
+    </div>
+
 
   </div>
-  
-  
-  
+
+
+
 
 </div>
 <div class="container margintop4container">
@@ -29,63 +29,75 @@
     <div class="col-md-8 column padding4table">
       <div class="panel-group">
         <div class="panel panel-default" *ngFor="let account of cardList">
-          <div class="panel-heading">
-            <a class="panel-title collapsed" data-toggle="collapse" href="#{{account['account'].accountId}}">
-              <button class="btn btn-danger" type="button">
-                {{account['account'].accountType}} Account <span
-                  class="badge">{{account['cards'].savingcards.length+account['cards'].creditcards.length}}</span>
-              </button></a>
-            <a>
-              <caption class="caption_no_cards"
-                *ngIf="account['cards'].savingcards.length==0&&account['cards'].creditcards.length==0">该账户暂未绑定任何卡
-              </caption>
-            </a>
-          </div>
-          <div id="{{account['account'].accountId}}" class="panel-collapse in">
-            <div class="panel-body"
-              *ngIf="!account['cards'].savingcards.length==0||!account['cards'].creditcards.length==0">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>ProductName</th>
-                    <th>Card Number</th>
-                    <th>Currency</th>
-                    <th>CurrentBalance</th>
-                    <th>AvailableBalance</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let card of account['cards'].savingcards">
-                    <td>{{card.productName}}</td>
-                    <td>{{card.displayAccountNumber | cardDisplayNumberFormat}}
-                      <div class="transaction_button" data-toggle="modal" data-target="#transaction">
-                        <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
-                      </div>
-                    </td>
-                    <td>{{card.currencyCode}}</td>
-                    <td>{{card.currentBalance| number: '1.2-4'}}</td>
-                    <td>{{card.availableBalance| number: '1.2-4'}}</td>
-                    <td>{{card.accountStatus}}</td>
 
-                  </tr>
-                  <tr *ngFor="let card of account['cards'].creditcards">
-                    <td>{{card.productName}}</td>
-                    <td>{{card.displayAccountNumber | cardDisplayNumberFormat}}
-                      <div class="transaction_button" data-toggle="modal" data-target="#transaction">
-                        <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
-                      </div>
-                    </td>
-                    <td>{{card.currencyCode}}</td>
-                    <td>{{card.currentBalance| number: '1.2-4'}}</td>
-                    <td>{{card.availableBalance| number: '1.2-4'}}</td>
-                    <td>{{card.accountStatus}}</td>
-
-                  </tr>
-                </tbody>
-              </table>
+    
+            <div class="panel-heading">
+              <a class="panel-title collapsed" data-toggle="collapse" href="#{{account['account']['accountId']}}">
+                <!-- href="#{{account['account'].accountId}}" 上一行的href属性-->
+                <button class="btn btn-danger" type="button">
+                    {{account["account"]["accountType"]}}
+                  
+                  <span
+                    class="badge">{{account['cards']['savingcards']?.length+account['cards']['creditcards']?.length}}</span>
+                </button></a>
+              <a>
+                <!-- <caption class="caption_no_cards"
+                  *ngIf="account['acc'].?length==0&&account['creditcards'].?length==0">该账户暂未绑定任何卡
+                </caption> -->
+              </a>
             </div>
+            <div class="panel-collapse in"  id="{{account['account']['accountId']}}">
+              <!-- id="{{account['account'].accountId}}" -->
+              <div class="panel-body">
+                  <!-- *ngIf="!account['savingcards'].length==0||!account['creditcards'].length==0" -->
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>ProductName</th>
+                      <th>Card Number</th>
+                      <th>Currency</th>
+                      <th>CurrentBalance</th>
+                      <th>AvailableBalance</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      
+                    <tr *ngFor="let card of account['cards']['savingcards'];" [ngClass]="{'cardStatusflag':card.accountStatus!='Active'}">
+                      <td>{{card.productName}}</td>
+                      <td>{{card.displayAccountNumber | cardDisplayNumberFormat}}
+                        <div class="transaction_button" data-toggle="modal" data-target="#transaction">
+                          <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
+                        </div>
+                      </td>
+                      <td>{{card.currencyCode}}</td>
+                      <td>{{card.currentBalance| number: '1.2-4'}}</td>
+                      <td>{{card.availableBalance| number: '1.2-4'}}</td>
+                      <td>{{card.accountStatus}}</td>
+                      <td><a class="badge" (click)="changeCardStatus(card.cardId)" >Loss</a></td>
+                    </tr>
+                    <tr *ngFor="let card of account['cards']['creditcards'];" [ngClass]="{'cardStatusflag':card.accountStatus!='Active'}">
+                      <td>{{card.productName}}</td>
+                      <td>{{card.displayAccountNumber | cardDisplayNumberFormat}}
+                        <div class="transaction_button" data-toggle="modal" data-target="#transaction">
+                          <span class="badge" (click)="getTransactionRecords(card.cardId)">TransRec</span>
+                        </div>
+                      </td>
+                      <td>{{card.currencyCode}}</td>
+                      <td>{{card.currentBalance| number: '1.2-4'}}</td>
+                      <td>{{card.availableBalance| number: '1.2-4'}}</td>
+                      <td>{{card.accountStatus}}</td>
+                      <td><a class="badge" (click)="changeCardStatus(card.cardId)" >Loss</a></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+
+
           </div>
+
         </div>
       </div>
     </div>

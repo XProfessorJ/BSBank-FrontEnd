@@ -6,6 +6,7 @@
     color: white!important;
     background-color: #d9534f!important;
 }
+
 p{
     font-size: 5vh;
     display:inline-block;
@@ -100,5 +101,7 @@ a{
     top:10%;
     right:25%;
 }
-
-    
+.cardStatusflag{
+    opacity: 0.5;
+    pointer-events: none;
+  }

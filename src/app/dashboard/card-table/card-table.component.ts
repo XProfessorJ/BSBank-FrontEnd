@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,OnDestroy} from '@angular/core';
 import { CustomerEntity } from 'src/app/model/Customer';
 import { CustomerService } from 'src/app/service/customer-service';
 import { Router } from '@angular/router';
@@ -7,21 +7,24 @@ import { SavingCard } from 'src/app/model/SavingAccount';
 import { Account } from 'src/app/model/Account'
 import { CardEntity } from 'src/app/model/CardEntity';
 import { TransRecordEntity } from 'src/app/model/TransRecordEntity';
-
+import {ActivatedRoute, NavigationEnd} from '@angular/router';
+import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-card-table',
   templateUrl: './card-table.component.html',
   styleUrls: ['./card-table.component.css']
 })
-export class CardTableComponent implements OnInit {
+export class CardTableComponent implements OnInit, OnDestroy {
   private accounts: Account[];
   private customer: CustomerEntity;
   private creditCards: CreditCard[];
   private savingCards: SavingCard[];
   private investmentCards;
-  private cardList: Array<CardEntity[]> = new Array;;
+  private cardList: Array<CardEntity[]> = new Array;
+  private accountList:Array<Account[]> = new Array;
   private container;
   private transactionRecords: TransRecordEntity[];
   private totalPage: Array<number> = new Array;
@@ -29,14 +32,31 @@ export class CardTableComponent implements OnInit {
   private cardId;
   private sayHello;
   private actionInfo;
+  navigationSubscription;
+  
+  
   constructor(
     private customerService: CustomerService,
     private router: Router,
-    private http:HttpClient
-  ) { }
+    private http:HttpClient,
+    private route:ActivatedRoute,
+    private location: Location
+  ) { 
+    this.navigationSubscription = this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.initLoad(event);
+      }
+    });
+  }
+
+  initLoad(e) {
+    window.scrollTo(0, 0);
+    console.log(e);
+  }
 
   ngOnInit() {
     this.getAllCustomerAccounts();
+ 
     // this.getCreditCards();
     let date = new Date();
     if (date.getHours() < 12 && date.getHours() > 6) {
@@ -56,6 +76,13 @@ export class CardTableComponent implements OnInit {
        data=>{this.actionInfo=data;}
     );
 
+  }
+
+  ngOnDestroy(): void {
+    // 销毁navigationSubscription，避免内存泄漏
+    if (this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
+    }
   }
 
   greyClose(){
@@ -89,8 +116,12 @@ export class CardTableComponent implements OnInit {
       this.customer = data['customer'];
       for (let i in this.accounts) {
         this.customerService.queryCustomerCards(this.accounts[i].accountId).subscribe(data => {
-          this.cardList.push(data);//to use id for index may cause the problem of perfomance
-          console.log();
+         // this.cardList.push(data['cards']);//to use id for index may cause the problem of perfomance 
+         this.cardList.push(data); 
+
+         //console.log("cardList::::::::::::",this.cardList[0]['account'].accountType);
+         //console.log("cars!!!!!!!!!!",this.cardList[0]['cards']['creditcards'][0].accountNickname);
+         // this.accountList.push(data['account']);
         });
       }
     });
@@ -122,6 +153,25 @@ export class CardTableComponent implements OnInit {
     });
   }
 
-
+  //
+  changeCardStatus(cardId){
+    
+    this.customerService.changeCardStatus(cardId).subscribe(
+      data=>{
+        console.log("**************"+data);
+        let flag=data;
+         if(flag=="1"){
+          // window.location.reload();
+          //     this.router.navigate(['/dashboard'],{
+          //       queryParams: {refresh: new Date().getTime()}
+          //     });
+          // this.router.navigate(['/dashboard']);
+          location.reload(); 
+         }else{
+            alert("You don't have the permissions");
+         }
+      }
+    );
+  }
   
 }
